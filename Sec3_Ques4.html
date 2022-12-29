@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Age Calculator</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container center">
+      <form action="">
+        <!-- <h1><label for="Day">Enter your DOB Day:</label></h1>
+        <input type="number" id="day" class="form-control my-5" />
+        <h1><label for="Month">Enter your DOB Month:</label></h1>
+        <input type="number" id="months" class="form-control my-5" />
+        <h1><label for="Year">Enter your DOB Year:</label></h1>
+        <input type="number" id="year" class="form-control my-5" /> -->
+        <!-- <button class="btn btn-primary" onclick="agecal()">Result:</button> -->
+      </form>
+    </div>
+    <script>
+      function Age(
+        currentDate,
+        currentMonth,
+        currentYear,
+        birthDate,
+        birthMonth,
+        birthYear
+      ) {
+        // days in months
+        months = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+        if (birthDate > currentDate) {
+          currentDate = currentDate + months[birthMonth - 1];
+          currentMonth = currentMonth - 1;
+        }
+
+        if (birthMonth > currentMonth) {
+          currentYear = currentYear - 1;
+          currentMonth = currentMonth + 12;
+        }
+
+        var calculated_date = currentDate - birthDate;
+        var calculated_month = currentMonth - birthMonth;
+        var calculated_year = currentYear - birthYear;
+
+        document.write(
+          "<h1>Present Age</h1><br>Years: " +
+            calculated_year +
+            "// Months: " +
+            calculated_month +
+            " // Days: " +
+            calculated_date
+        );
+      }
+
+      var currentDate = parseInt(prompt("Enter Current Date:"));
+      var currentMonth = parseInt(prompt("Enter Current Month:"));
+      var currentYear = parseInt(prompt("Enter Current Year:"));
+
+      var birthDate = parseInt(prompt("Enter Birth Date:"));
+      var birthMonth = parseInt(prompt("Enter Birth Month:"));
+      var birthYear = parseInt(prompt("Enter Birth Year:"));
+
+      Age(
+        currentDate,
+        currentMonth,
+        currentYear,
+        birthDate,
+        birthMonth,
+        birthYear
+      );
+    </script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
